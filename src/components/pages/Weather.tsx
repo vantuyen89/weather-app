@@ -19,7 +19,7 @@ import Snowfall from "react-snowfall";
 import { FormEvent, useEffect, useState } from "react";
 import Spin from "./Spin";
 import { IWeather } from "../../types/weather";
-import { useTranslation } from "react-i18next";
+
 import "react-toastify/ReactToastify.css";
 import "../../i18n";
 import { toast } from "react-toastify";
