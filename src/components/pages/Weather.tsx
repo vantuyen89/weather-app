@@ -4,11 +4,7 @@ import {
   IoSearchOutline,
   IoThunderstormSharp,
 } from "react-icons/io5";
-import {
-  IoMdCloudy,
-  IoMdSnow,
-  IoMdSunny,
-} from "react-icons/io";
+import { IoMdCloudy, IoMdSnow, IoMdSunny } from "react-icons/io";
 import { MdFoggy, MdNightlight } from "react-icons/md";
 import { format } from "date-fns";
 import { AiOutlineEye } from "react-icons/ai";
@@ -146,11 +142,11 @@ const Weather = () => {
 
   return (
     <>
-      <div className="relative w-full h-screen flex ">
+      <div className="relative w-full lg:h-screen h-full flex flex-col lg:flex-row gap-7 ">
         <div className="absolute inset-0 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat filter blur-[15px] -z-10"></div>
         <Snowfall />
 
-        <div className="w-full  flex flex-col items-center justify-center gap-3">
+        <div className="w-full  flex flex-col items-center justify-center gap-3 lg:px-0 px-5">
           <img src="/logo.svg" alt="" className="w-[180px] h-[60px]" />
           <form
             action=""
@@ -230,7 +226,7 @@ const Weather = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col justify-center pr-5">
+        <div className="flex flex-col justify-center px-5">
           <WeatherForecast dataTime={dataTime} isLoading={isLoading} />
           <WeatherDaily dataTime={dataDaily} isLoading={isLoading} />
         </div>
