@@ -44,3 +44,8 @@ export interface IWeather {
   name: string;
   cod: number;
 }
+
+export interface IForecast extends IWeather {
+  pop: number;
+  dt_txt: string;
+}
