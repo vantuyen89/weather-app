@@ -5,7 +5,6 @@ import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
 import { FaCloudMoonRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
 import { ScrollArea } from "../ui/scroll-area";
-import { Button } from "../ui/button";
 
 interface Props {
   dataTime: IForecast[];
