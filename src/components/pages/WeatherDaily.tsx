@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import { IoMdCloudy, IoMdSnow, IoMdSunny } from "react-icons/io";
 import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
-import { FaCloudMoonRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
+import { FaCloudMoonRain, FaCloudRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 interface Props {
@@ -20,44 +20,26 @@ const WeatherDaily = ({ dataTime, isLoading }: Props) => {
         <div className="flex gap-5 w-max">
           {dataTime.map((time: IForecast) => {
             let icon;
-            switch (time?.weather?.[0]?.icon) {
-              case "01d":
+            switch (time?.weather?.[0]?.main) {
+              case "Clear":
                 icon = <IoMdSunny size={40} className="text-yellow-300" />;
                 break;
-              case "01n":
-                icon = <MdNightlight size={40} />;
-                break;
-              case "02d":
-                icon = <FaCloudSun size={40} />;
-                break;
-              case "02n":
-                icon = <IoCloudyNight size={40} />;
-                break;
-              case "03d":
+              case "Clouds":
                 icon = <IoMdCloudy size={40} />;
                 break;
-              case "03n":
-                icon = <IoCloudyNight size={40} />;
-                break;
-              case "04d":
-                icon = <IoMdCloudy size={40} />;
-                break;
-              case "04n":
-                icon = <IoCloudyNight size={40} />;
-                break;
-              case "50d":
+              case "Atmosphere":
                 icon = <MdFoggy size={40} />;
                 break;
-              case "13d":
+              case "Snow":
                 icon = <IoMdSnow size={40} className="text-blue-300" />;
                 break;
-              case "09d":
-                icon = <FaCloudMoonRain size={40} />;
+              case "Rain":
+                icon = <FaCloudRain size={40} />;
                 break;
-              case "10d":
+              case "Drizzle":
                 icon = <FaCloudSunRain size={40} />;
                 break;
-              case "11d":
+              case "Thunderstorm":
                 icon = <IoThunderstormSharp size={40} />;
                 break;
 

@@ -94,6 +94,9 @@ const Weather = () => {
     case "10d":
       icon = <FaCloudSunRain size={70} />;
       break;
+    case "10n":
+      icon = <FaCloudMoonRain size={70} />;
+      break;
     case "11d":
       icon = <IoThunderstormSharp size={70} />;
       break;

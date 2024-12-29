@@ -1,0 +1,45 @@
+switch (time?.weather?.[0]?.icon) {
+              case "01d":
+                icon = <IoMdSunny size={40} className="text-yellow-300" />;
+                break;
+              case "01n":
+                icon = <MdNightlight size={40} />;
+                break;
+              case "02d":
+                icon = <FaCloudSun size={40} />;
+                break;
+              case "02n":
+                icon = <IoCloudyNight size={40} />;
+                break;
+              case "03d":
+                icon = <IoMdCloudy size={40} />;
+                break;
+              case "03n":
+                icon = <IoCloudyNight size={40} />;
+                break;
+              case "04d":
+                icon = <IoMdCloudy size={40} />;
+                break;
+              case "04n":
+                icon = <IoCloudyNight size={40} />;
+                break;
+              case "50d":
+                icon = <MdFoggy size={40} />;
+                break;
+              case "13d":
+                icon = <IoMdSnow size={40} className="text-blue-300" />;
+                break;
+              case "09d":
+                icon = <FaCloudMoonRain size={40} />;
+                break;
+              case "10d":
+                icon = <FaCloudSunRain size={40} />;
+                break;
+              case "11d":
+                icon = <IoThunderstormSharp size={40} />;
+                break;
+
+              default:
+                icon = <IoMdCloudy size={40} />;
+                break;
+            }

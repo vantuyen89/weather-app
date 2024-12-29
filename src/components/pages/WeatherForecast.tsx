@@ -3,7 +3,12 @@ import { format } from "date-fns";
 import { IoMdCloudy, IoMdSnow, IoMdSunny } from "react-icons/io";
 import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
-import { FaCloudMoonRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
+import {
+  FaCloudMoonRain,
+  FaCloudRain,
+  FaCloudSun,
+  FaCloudSunRain,
+} from "react-icons/fa6";
 import SkeletonWeather from "./SkeletonWeather";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
@@ -57,6 +62,9 @@ const WeatherForecast = ({ dataTime, isLoading }: Props) => {
                 break;
               case "10d":
                 icon = <FaCloudSunRain size={40} />;
+                break;
+              case "10n":
+                icon = <FaCloudMoonRain size={40} />;
                 break;
               case "11d":
                 icon = <IoThunderstormSharp size={40} />;
