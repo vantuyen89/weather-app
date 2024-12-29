@@ -5,7 +5,7 @@ import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
 import { FaCloudMoonRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
 import SkeletonWeather from "./SkeletonWeather";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 interface Props {
   dataTime: IForecast[];
@@ -13,12 +13,12 @@ interface Props {
 }
 const WeatherForecast = ({ dataTime, isLoading }: Props) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <h3 className="text-white font-semibold tracking-wider lg:text-3xl text-2xl py-8">
         Thời tiết những giờ tới
       </h3>
-      <ScrollArea className="">
-        <div className="flex gap-5">
+      <ScrollArea className="w-full h-full">
+        <div className="flex gap-5 w-max">
           {dataTime.map((time: IForecast) => {
             let icon;
             switch (time?.weather?.[0]?.icon) {
@@ -88,6 +88,9 @@ const WeatherForecast = ({ dataTime, isLoading }: Props) => {
               </>
             );
           })}
+        </div>
+        <div className="pt-3">
+          <ScrollBar orientation="horizontal" />
         </div>
       </ScrollArea>
     </div>
