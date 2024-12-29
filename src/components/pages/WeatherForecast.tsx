@@ -5,7 +5,6 @@ import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
 import {
   FaCloudMoonRain,
-  FaCloudRain,
   FaCloudSun,
   FaCloudSunRain,
 } from "react-icons/fa6";

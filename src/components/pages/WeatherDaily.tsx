@@ -1,9 +1,9 @@
 import { IForecast } from "../../types/weather";
 import { format } from "date-fns";
 import { IoMdCloudy, IoMdSnow, IoMdSunny } from "react-icons/io";
-import { MdFoggy, MdNightlight } from "react-icons/md";
-import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
-import { FaCloudMoonRain, FaCloudRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
+import { MdFoggy } from "react-icons/md";
+import {  IoThunderstormSharp } from "react-icons/io5";
+import {  FaCloudRain, FaCloudSunRain } from "react-icons/fa6";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 interface Props {
