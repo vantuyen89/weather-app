@@ -3,11 +3,7 @@ import { format } from "date-fns";
 import { IoMdCloudy, IoMdSnow, IoMdSunny } from "react-icons/io";
 import { MdFoggy, MdNightlight } from "react-icons/md";
 import { IoCloudyNight, IoThunderstormSharp } from "react-icons/io5";
-import {
-  FaCloudMoonRain,
-  FaCloudSun,
-  FaCloudSunRain,
-} from "react-icons/fa6";
+import { FaCloudMoonRain, FaCloudSun, FaCloudSunRain } from "react-icons/fa6";
 import SkeletonWeather from "./SkeletonWeather";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
@@ -74,25 +70,24 @@ const WeatherForecast = ({ dataTime, isLoading }: Props) => {
                 break;
             }
 
-            return (
-              <>
-                {isLoading ? (
-                  <SkeletonWeather />
-                ) : (
-                  <div className="w-[100px] min-w-[100px] h-[150px] bg-black/20 rounded-2xl text-white cursor-pointer">
-                    <div className="flex flex-col w-full h-full justify-center items-center gap-3">
-                      <h5>{format(time.dt_txt, "dd/MM HH'h'")}</h5>
-                      {icon}
-                      <div className="flex justify-center items-center">
-                        <p className="text-xl">
-                          {parseInt(time?.main?.temp.toString())}
-                        </p>
-                        <p className="text-lg">°C</p>
-                      </div>
-                    </div>
+            return isLoading ? (
+              <SkeletonWeather />
+            ) : (
+              <div
+                className="w-[100px] min-w-[100px] h-[150px] bg-black/20 rounded-2xl text-white cursor-pointer"
+                key={time?.dt_txt}
+              >
+                <div className="flex flex-col w-full h-full justify-center items-center gap-3">
+                  <h5>{format(time.dt_txt, "dd/MM HH'h'")}</h5>
+                  {icon}
+                  <div className="flex justify-center items-center">
+                    <p className="text-xl">
+                      {parseInt(time?.main?.temp.toString())}
+                    </p>
+                    <p className="text-lg">°C</p>
                   </div>
-                )}
-              </>
+                </div>
+              </div>
             );
           })}
         </div>

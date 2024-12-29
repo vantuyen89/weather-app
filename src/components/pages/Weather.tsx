@@ -27,10 +27,9 @@ import { getWeather } from "../../service/weather";
 import WeatherForecast from "./WeatherForecast";
 import WeatherDaily from "./WeatherDaily";
 const Weather = () => {
-  const [location, setLocation] = useState("VietNam");
+  const [location, setLocation] = useState<string>("VietNam");
   const [data, setData] = useState<IWeather>({} as IWeather);
   const [isLoading, setLoading] = useState(false);
-  //   console.log(process.env.REACT_APP_API_KEY);
   const [dataForecast, setDataForecast] = useState<IForecast[]>([]);
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -107,7 +106,6 @@ const Weather = () => {
   }
   const currentDate = new Date();
   const formattedDate = format(currentDate, "dd/MM/yyyy");
-  //   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [animate, setAnimate] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -139,10 +137,6 @@ const Weather = () => {
   const dataDaily = dataForecast?.filter((time: IForecast) => {
     return format(time.dt_txt, "HH:mm:ss") === "00:00:00";
   });
-  console.log("dataDaily", dataDaily);
-
-  // console.log(dataTime);
-
   return (
     <>
       <div className="relative w-full lg:h-screen h-full flex flex-col lg:flex-row gap-7 ">
@@ -191,7 +185,9 @@ const Weather = () => {
                 <div className="flex flex-col gap-3 p-4 justify-center items-center">
                   <div className="flex justify-center items-center">
                     <p className="text-9xl">
-                      {parseInt(data?.main?.temp.toString())}
+                      {data?.main?.temp !== undefined
+                        ? parseInt(data.main.temp.toString())
+                        : "--"}
                     </p>
                     <p className="text-5xl">°C</p>
                   </div>
